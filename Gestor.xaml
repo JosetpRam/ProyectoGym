@@ -14,6 +14,6 @@
         <CheckBox Content="Rutina B" HorizontalAlignment="Left" Margin="128,175,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
         <CheckBox Content="Full Body" HorizontalAlignment="Center" Margin="0,252,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
         <Button Content="CREAR RUTINA" HorizontalAlignment="Center" Margin="0,318,0,0" VerticalAlignment="Top" Background="#FF1EA7D5" FontSize="16" FontWeight="Bold" Height="47" Width="162"/>
-        <Button Content="ELIMINAR RUTINA" HorizontalAlignment="Center" Margin="0,381,0,0" VerticalAlignment="Top" Height="47" Width="162" FontWeight="Bold" FontSize="14"/>
+        <Button Content="ELIMINAR RUTINA" HorizontalAlignment="Center" Margin="0,381,0,0" VerticalAlignment="Top" Height="47" Width="162" FontWeight="Bold" FontSize="14" Background="#FFF4C325"/>
     </Grid>
 </Page>

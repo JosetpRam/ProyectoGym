@@ -6,13 +6,16 @@
         xmlns:local="clr-namespace:ProyectoGym"
         mc:Ignorable="d"
         Title="MainWindow" Height="401" Width="396">
-    <Grid Margin="0,0,0,-16">
+    <Grid Margin="-9,0,-62,-74">
+        <Grid.Background>
+            <ImageBrush ImageSource="/fff.jpg"/>
+        </Grid.Background>
         <Label Content="Usuario" HorizontalAlignment="Left" Margin="74,81,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="14"/>
         <Label Content="Contraseña" HorizontalAlignment="Left" Margin="74,147,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="14"/>
         <TextBox HorizontalAlignment="Left" Margin="177,151,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
         <TextBox HorizontalAlignment="Left" Margin="158,85,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
         <Button Content="Iniciar Sesion" HorizontalAlignment="Left" Margin="123,226,0,0" VerticalAlignment="Top" Height="46" Width="168" Background="#FF1EA7D5" FontFamily="Arial Black"/>
-        <Button Content="Ir a Registro" HorizontalAlignment="Left" Margin="123,298,0,0" VerticalAlignment="Top" Height="46" Width="168" FontFamily="Arial Black"/>
+        <Button Content="Ir a Registro" HorizontalAlignment="Left" Margin="123,298,0,0" VerticalAlignment="Top" Height="46" Width="168" FontFamily="Arial Black" Background="#FFF4C325"/>
         <Label Content="LOGIN" HorizontalAlignment="Left" Margin="171,10,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="14"/>
 
     </Grid>

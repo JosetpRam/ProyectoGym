@@ -10,6 +10,8 @@
 
   <ItemGroup>
     <None Remove="ejerci.jpg" />
+    <None Remove="fff.jpg" />
+    <None Remove="OIP.jpg" />
     <None Remove="press.jpg" />
   </ItemGroup>
 
@@ -19,6 +21,8 @@
 
   <ItemGroup>
     <Resource Include="ejerci.jpg" />
+    <Resource Include="fff.jpg" />
+    <Resource Include="OIP.jpg" />
     <Resource Include="press.jpg" />
   </ItemGroup>
 
