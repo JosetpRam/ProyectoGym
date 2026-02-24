@@ -1,0 +1,17 @@
+﻿<Page x:Class="ProyectoGym.Sesion"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ProyectoGym"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Sesion">
+
+    <Grid Margin="0,0,329,-100" Background="White">
+        <Label Content="REGISTRO DE SESION" HorizontalAlignment="Center" Margin="0,30,0,0" VerticalAlignment="Top" FontSize="16" FontFamily="Arial Black"/>
+        <ListBox Margin="21,63,29,298"/>
+        <Button Content="GUARDAR SESION" HorizontalAlignment="Center" Margin="0,275,0,0" VerticalAlignment="Top" Height="30" Width="165" FontWeight="Bold" Background="#FF1EA7D5"/>
+        <ListBox Margin="21,343,29,27"/>
+    </Grid>
+</Page>

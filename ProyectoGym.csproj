@@ -9,7 +9,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="ejerci.jpg" />
+    <None Remove="press.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="ejerci.jpg" />
+    <Resource Include="press.jpg" />
   </ItemGroup>
 
 </Project>
