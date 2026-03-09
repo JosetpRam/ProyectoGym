@@ -11,15 +11,10 @@
     <Grid Margin="0,0,59,-196" Background="White">
         <Label Content="PROGRESO" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="16" FontFamily="Arial Black"/>
         <ListBox Margin="25,60,25,416"/>
-        <ListBox Margin="25,257,252,218">
-            <ListBox.Background>
-                <ImageBrush ImageSource="/press.jpg"/>
-            </ListBox.Background>
-        </ListBox>
         <ListBox Margin="25,465,25,10"/>
         <Label Content="Peso Corporal" HorizontalAlignment="Left" Margin="25,34,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.44,0.008" FontWeight="Bold"/>
         <Label Content="Rendimiento" HorizontalAlignment="Left" Margin="25,235,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <Label Content="Estado Fisico" HorizontalAlignment="Left" Margin="25,439,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <ListBox Margin="489,257,25,218" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        <ListBox Margin="25,257,25,218"/>
     </Grid>
 </Page>
