@@ -1,0 +1,65 @@
+<Page x:Class="ProyectoGym.Diario"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:vm="clr-namespace:ProyectoGym.ViewModel"
+      Title="Diario fisico">
+
+    <Page.DataContext>
+        <vm:DiarioViewModel/>
+    </Page.DataContext>
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="REGISTRO DIARIO FISICO"
+                   FontFamily="Arial Black" FontSize="16"
+                   HorizontalAlignment="Center" Margin="0,0,0,16"/>
+
+        <Border Grid.Row="1" Background="#FFDFDFE0" CornerRadius="8"
+                Padding="16" Margin="0,0,0,12">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0" Margin="0,0,10,0">
+                    <TextBlock Text="Fecha" FontWeight="Bold" Margin="0,0,0,4"/>
+                    <DatePicker SelectedDate="{Binding Fecha}" Height="32"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Margin="0,0,10,0">
+                    <TextBlock Text="Nivel de energia (1-5)" FontWeight="Bold" Margin="0,0,0,4"/>
+                    <ComboBox ItemsSource="{Binding NivelesEnergia}"
+                              SelectedItem="{Binding Energia}" Height="32"/>
+                    <TextBlock Text="Horas de sueno" FontWeight="Bold" Margin="0,8,0,4"/>
+                    <TextBox Text="{Binding HorasSueno, UpdateSourceTrigger=PropertyChanged}"
+                             Height="32" Padding="8,4"/>
+                </StackPanel>
+                <StackPanel Grid.Column="2" Margin="0,0,10,0">
+                    <TextBlock Text="Nivel de fatiga (1-5)" FontWeight="Bold" Margin="0,0,0,4"/>
+                    <ComboBox ItemsSource="{Binding NivelesFatiga}"
+                              SelectedItem="{Binding Fatiga}" Height="32"/>
+                </StackPanel>
+                <StackPanel Grid.Column="3" VerticalAlignment="Center">
+                    <Button Content="GUARDAR REGISTRO"
+                            Command="{Binding GuardarRegistroCommand}"
+                            Height="31" Width="140" FontWeight="Bold"
+                            Background="#FF1EA7D5" Foreground="White"
+                            BorderThickness="0"/>
+                    <TextBlock Text="{Binding Mensaje}" Foreground="Green"
+                               FontWeight="Bold" TextWrapping="Wrap" MaxWidth="140"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+        <ListBox Grid.Row="2" ItemsSource="{Binding Registros}"
+                 DisplayMemberPath="Resumen" FontSize="13" Padding="4"/>
+        <Button Content="Exportar a Excel" HorizontalAlignment="Left" Margin="436,107,0,0" Grid.Row="1" VerticalAlignment="Top" Background="#FF22F91B" FontWeight="Bold" Foreground="White" Height="27" Width="140" Command="{Binding ExportToExcelCommand}"/>
+    </Grid>
+</Page>

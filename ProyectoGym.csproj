@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="ejerci.jpg" />
+    <None Remove="fff.jpg" />
+    <None Remove="OIP.jpg" />
+    <None Remove="press.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="ClosedXML" Version="0.105.0" />
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.25" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.25" />
+    <PackageReference Include="Microsoft.ReportingServices.ReportViewerControl.Winforms" Version="150.1652.0" />
+    <PackageReference Include="QuestPDF" Version="2026.2.4" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ejerci.jpg" />
+    <Resource Include="fff.jpg" />
+    <Resource Include="OIP.jpg" />
+    <Resource Include="press.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BD\" />
+  </ItemGroup>
+</Project>

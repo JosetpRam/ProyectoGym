@@ -1,0 +1,82 @@
+<Page x:Class="ProyectoGym.Sesion"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:vm="clr-namespace:ProyectoGym.ViewModel"
+      Title="Sesiones de entrenamiento">
+
+    <Page.DataContext>
+        <vm:SesionViewModel/>
+    </Page.DataContext>
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="REGISTRO DE SESION"
+                   FontFamily="Arial Black" FontSize="16"
+                   HorizontalAlignment="Center" Margin="0,0,0,16"/>
+        <Border Grid.Row="1" Background="#FFDFDFE0" CornerRadius="8"
+                Padding="16" Margin="0,0,0,12">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0" Margin="0,0,10,0">
+                    <TextBlock Text="Rutina" FontWeight="Bold" Margin="0,0,0,4"/>
+                    <ComboBox ItemsSource="{Binding Rutinas}"
+                              SelectedItem="{Binding RutinaSeleccionada}"
+                              Height="32"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Margin="0,0,10,0">
+                    <TextBlock Text="Duracion (min)" FontWeight="Bold" Margin="0,0,0,4"/>
+                    <TextBox Text="{Binding Duracion, UpdateSourceTrigger=PropertyChanged}"
+                             Height="32" Padding="8,4"/>
+                    <TextBlock Text="Notas" FontWeight="Bold" Margin="0,8,0,4"/>
+                    <TextBox Text="{Binding Notas, UpdateSourceTrigger=PropertyChanged}"
+                             Height="32" Padding="8,4"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="2" VerticalAlignment="Center">
+                    <Button Content="GUARDAR SESION"
+                            Command="{Binding GuardarSesionCommand}"
+                            Height="44" Width="130" FontWeight="Bold"
+                            Background="#FF1EA7D5" Foreground="White"
+                            BorderThickness="0" Margin="0,0,0,8"/>
+                    <TextBlock Text="{Binding Mensaje}" Foreground="Green"
+                               FontWeight="Bold" TextWrapping="Wrap" MaxWidth="130"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+        <DataGrid Grid.Row="2"
+                  ItemsSource="{Binding Sesiones}"
+                  SelectedItem="{Binding SesionSeleccionada}"
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False"
+                  IsReadOnly="True"
+                  AlternatingRowBackground="#FFF7F9FF"
+                  GridLinesVisibility="Horizontal"
+                  BorderThickness="1" BorderBrush="#FFDDDDDD">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Fecha"    Binding="{Binding FechaDisplay}"   Width="100"/>
+                <DataGridTextColumn Header="Rutina"   Binding="{Binding Rutina}"         Width="*"/>
+                <DataGridTextColumn Header="Duracion" Binding="{Binding Duracion}"       Width="80"/>
+                <DataGridTextColumn Header="Notas"    Binding="{Binding Notas}"          Width="*"/>
+                <DataGridTextColumn Header="Usuario"  Binding="{Binding NombreUsuario}"  Width="120"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button Grid.Row="3" Content="ELIMINAR SESION SELECCIONADA"
+                Command="{Binding EliminarSesionCommand}"
+                HorizontalAlignment="Right" Margin="0,8,0,0"
+                Height="36" Width="220" FontWeight="Bold"
+                Background="#FFFF5252" Foreground="White" BorderThickness="0"/>
+    </Grid>
+</Page>

@@ -1,0 +1,54 @@
+<Window x:Class="ProyectoGym.ShellWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:ProyectoGym.ViewModel"
+        Title="GymApp" Height="560" Width="820"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.DataContext>
+        <vm:MainViewModel/>
+    </Window.DataContext>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" Background="#FF2020C7">
+            <TextBlock Text="GYM APP"
+                       FontFamily="Arial Black" FontSize="20"
+                       Foreground="White"
+                       HorizontalAlignment="Center"
+                       Margin="0,28,0,6"/>
+
+            <TextBlock Text="{Binding Bienvenida}" Foreground="White"
+                       HorizontalAlignment="Center"
+                       TextWrapping="Wrap" TextAlignment="Center"
+                       Margin="8,0,8,28"/>
+
+            <Button Content="  Sesiones"
+                    Command="{Binding IrASesionCommand}"
+                    Style="{StaticResource MenuBtn}"/>
+            <Button Content="  Diario fisico"
+                    Command="{Binding IrADiarioCommand}"
+                    Style="{StaticResource MenuBtn}"/>
+            <Button Content="  Gestor rutinas"
+                    Command="{Binding IrAGestorCommand}"
+                    Style="{StaticResource MenuBtn}"/>
+            <Button Content="  Progreso"
+                    Command="{Binding IrAProgresoCommand}"
+                    Style="{StaticResource MenuBtn}"/>
+            <Button Content="  Configuracion"
+                    Command="{Binding IrAConfiguracionCommand}"
+                    Style="{StaticResource MenuBtn}"/>
+            <Button Content="  Resultados"
+                    Command="{Binding IrAResultadoCommand}"
+                    Style="{StaticResource MenuBtn}"/>
+        </StackPanel>
+
+        <Frame Grid.Column="1"
+               Content="{Binding PaginaActual}"
+               NavigationUIVisibility="Hidden"
+               Background="White"/>
+    </Grid>
+</Window>

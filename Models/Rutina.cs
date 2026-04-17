@@ -1,0 +1,10 @@
+namespace ProyectoGym.Models
+{
+    public class Rutina
+    {
+        public int    Id        { get; set; }
+        public string Nombre    { get; set; } = "";
+        public string Tipo      { get; set; } = "";   
+        public bool   Activa    { get; set; } = true; 
+    }
+}

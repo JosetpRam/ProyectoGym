@@ -1,0 +1,48 @@
+<Page x:Class="ProyectoGym.Gestor"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:vm="clr-namespace:ProyectoGym.ViewModel"
+      Title="Gestor de rutinas">
+
+    <Page.DataContext>
+        <vm:GestorViewModel/>
+    </Page.DataContext>
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="GESTOR DE RUTINAS"
+                   FontFamily="Arial Black" FontSize="16"
+                   HorizontalAlignment="Center" Margin="0,0,0,16"/>
+
+        <Border Grid.Row="1" Background="#FFDFDFE0" CornerRadius="8"
+                Padding="16" Margin="0,0,0,12">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Nombre de la rutina:" FontWeight="Bold"
+                           VerticalAlignment="Center" Margin="0,0,10,0"/>
+                <TextBox Text="{Binding NuevaRutina, UpdateSourceTrigger=PropertyChanged}"
+                         Width="220" Height="32" Padding="8,4"/>
+                <Button Content="CREAR RUTINA"
+                        Command="{Binding CrearRutinaCommand}"
+                        Height="36" Width="130" FontWeight="Bold" Margin="10,0,0,0"
+                        Background="#FF1EA7D5" Foreground="White" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <ListBox Grid.Row="2"
+                 ItemsSource="{Binding Rutinas}"
+                 SelectedItem="{Binding RutinaSeleccionada}"
+                 DisplayMemberPath="Nombre"
+                 FontSize="15" Padding="8"/>
+
+        <Button Grid.Row="3" Content="ELIMINAR RUTINA SELECCIONADA"
+                Command="{Binding EliminarRutinaCommand}"
+                HorizontalAlignment="Right" Margin="0,8,0,0"
+                Height="36" Width="240" FontWeight="Bold"
+                Background="#FFFF5252" Foreground="White" BorderThickness="0"/>
+    </Grid>
+</Page>
